@@ -6,18 +6,34 @@ const diff = require('virtual-dom/diff')
 const patch = require('virtual-dom/patch')
 
 require('./ui/insert-styles')
+const createWorker = require('./lib/worker')
 const render = require('./ui')
 
 const state = {
-	todo: null
+	worker: null,
+	ready: false
 }
 
-const todo = () => {
-	state.todo = 'todo'
+const onError = (err) => {
+	console.error(err)
+	// todo: show in UI
+}
+
+const onReady = () => {
+	state.ready = true
 	rerender()
 }
 
-const actions = {todo}
+const onFrame = (frame) => {
+	state.frame = frame
+	rerender()
+}
+
+const actions = {onError, onReady, onFrame}
+
+setTimeout(() => {
+	state.worker = createWorker(actions)
+})
 
 let tree = render(state, actions)
 let root = createElement(tree)
