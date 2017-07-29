@@ -1,5 +1,7 @@
 # transit-map-generator
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/derhuerst/transit-map-generator.svg)](https://greenkeeper.io/)
+
 **Generate and optimize [transit maps](https://en.wikipedia.org/wiki/Transit_map) interactively.**
 
 [![npm version](https://img.shields.io/npm/v/transit-map-generator.svg)](https://www.npmjs.com/package/transit-map-generator)
