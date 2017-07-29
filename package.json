@@ -26,6 +26,7 @@
 	},
 	"dependencies": {
 		"csjs": "^1.1.0",
+		"generate-vbb-transit-map": "derhuerst/generate-vbb-transit-map",
 		"global": "^4.3.2",
 		"insert-styles": "^1.2.1",
 		"reconnecting-websocket": "^3.0.7",

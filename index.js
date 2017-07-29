@@ -11,7 +11,8 @@ const render = require('./ui')
 
 const state = {
 	worker: null,
-	ready: false
+	ready: false,
+	frame: null
 }
 
 const onError = (err) => {
