@@ -1,60 +1,64 @@
 {
-	"name": "transit-map-generator",
-	"description": "Generate and optimize transit maps interactively.",
-	"version": "0.1.0",
-	"main": "index.js",
-	"files": [
-		"index.js",
-		"lib",
-		"ui"
-	],
-	"keywords": [
-		"transit map",
-		"public transport",
-		"metro",
-		"subway",
-		"graph",
-		"optimization"
-	],
-	"author": "Jannis R <mail@jannisr.de>",
-	"homepage": "https://github.com/derhuerst/transit-map-generator",
-	"repository": "derhuerst/transit-map-generator",
-	"bugs": "https://github.com/derhuerst/transit-map-generator/issues",
-	"license": "ISC",
-	"engines": {
-		"node": ">=6"
-	},
-	"dependencies": {
-		"csjs": "^1.1.0",
-		"generate-vbb-transit-map": "derhuerst/generate-vbb-transit-map",
-		"global": "^4.3.2",
-		"insert-styles": "^1.2.1",
-		"reconnecting-websocket": "^4.1.0",
-		"virtual-dom": "^2.1.1"
-	},
-	"devDependencies": {
-		"babel-core": "^6.26.0",
-		"babel-preset-es2015": "^6.24.1",
-		"babelify": "^10.0.0",
-		"browserify": "^16.0.0",
-		"uglify-es": "^3.0.26",
-		"wzrd": "^1.5.0"
-	},
-	"browserify": {
-		"transform": [
-			[
-				"babelify",
-				{
-					"presets": [
-						"es2015"
-					],
-					"global": true
-				}
-			]
-		]
-	},
-	"scripts": {
-		"build": "browserify index.js | uglifyjs -mc > dist/bundle.js",
-		"start": "cd dist; wzrd ../index.js:bundle.js"
-	}
+  "name": "transit-map-generator",
+  "description": "Generate and optimize transit maps interactively.",
+  "version": "0.1.0",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib",
+    "ui"
+  ],
+  "keywords": [
+    "transit map",
+    "public transport",
+    "metro",
+    "subway",
+    "graph",
+    "optimization"
+  ],
+  "author": "Jannis R <mail@jannisr.de>",
+  "homepage": "https://github.com/derhuerst/transit-map-generator",
+  "repository": "derhuerst/transit-map-generator",
+  "bugs": "https://github.com/derhuerst/transit-map-generator/issues",
+  "license": "ISC",
+  "engines": {
+    "node": ">=6"
+  },
+  "dependencies": {
+    "csjs": "^1.1.0",
+    "generate-vbb-transit-map": "derhuerst/generate-vbb-transit-map",
+    "global": "^4.3.2",
+    "insert-styles": "^1.2.1",
+    "reconnecting-websocket": "^4.1.0",
+    "virtual-dom": "^2.1.1",
+    "snyk": "^1.319.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^10.0.0",
+    "browserify": "^16.0.0",
+    "uglify-es": "^3.0.26",
+    "wzrd": "^1.5.0"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ],
+          "global": true
+        }
+      ]
+    ]
+  },
+  "scripts": {
+    "build": "browserify index.js | uglifyjs -mc > dist/bundle.js",
+    "start": "cd dist; wzrd ../index.js:bundle.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
